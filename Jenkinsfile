@@ -3,26 +3,25 @@
 //declarative
 
 pipeline {
-	agent any
+	agent any 
 	stages {
-		stage('Build'){
+		stage('Build') {
 			steps {
 				echo "Build"
 			}
 		}
-		stage('Test'){
+		stage('Test') {
 			steps {
 				echo "Test"
 			}
 		}
-		stage('Integration Test'){
+		stage('Integration Test') {
 			steps {
 				echo "Integration Test"
 			}
 		}
 	} 
-	
-	post
+	post {
 		always {
 			echo 'Im awesome. I run always'
 		}
@@ -32,4 +31,5 @@ pipeline {
 		failure {
 			echo 'I run when you fail'
 		}
+	}
 }
